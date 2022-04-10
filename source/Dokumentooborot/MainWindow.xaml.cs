@@ -56,7 +56,7 @@ namespace Dokumentooborot
                 //ActiveUser.Фамилия = fuser.Фамилия;
                 //ActiveUser.Отчество = fuser.Отчество;
 
-                wUser taskWindow = new wUser();
+                wUser taskWindow = new wUser(db);
                 taskWindow.Show();
                 this.Close();
             }

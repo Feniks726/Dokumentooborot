@@ -6,37 +6,37 @@
         xmlns:local="clr-namespace:Dokumentooborot"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Техдокументация" Height="693.75" Width="1546">
+        Title="Техдокументация" Height="693.75" Width="1546" Loaded="Window_Loaded">
     <Grid  Background="#d7d7d7">
-        <TextBox x:Name="Find" materialDesign:HintAssist.Hint="Поиск по названию документа" Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Left"  Margin="214,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"/>
+        <TextBox x:Name="Find" materialDesign:HintAssist.Hint="Поиск по названию документа" Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Left"  Margin="214,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395" LostFocus="Find_LostFocus"/>
 
         <Border Width="173" HorizontalAlignment="Left" Margin="9,10,0,10" Background="White" Padding="5" >
             <Grid>
                 <TextBlock Text="Пользователь" HorizontalAlignment="Center" Margin="40,10,37,594"></TextBlock>
-                <Button Content="Отчеты" Margin="0,72,0,516" Height="Auto" Click="Button_Click_3" />
-                <Button Content="Выйти" Margin="0,527,0,61" Height="Auto" Click="Button_Click_2" />
+                <Button Content="Отчеты" Margin="0,72,0,516" Height="Auto" Name="btnReports" Click="btnReports_Click" />
+                <Button Content="Выйти" Margin="0,527,0,61" Height="Auto" Name="btnExit" Click="btnExit_Click" />
 
             </Grid>
         </Border>
 
         <DataGrid Name="dgogrenci" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="556" Margin="214,81,0,0" VerticalAlignment="Top" Width="1299">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Название}" Header="Индекс" IsReadOnly="True" Width="2*"/>
-                <DataGridTextColumn Binding="{Binding Автор_id}" Header="Название" IsReadOnly="True" Width="3*" />
-                <DataGridTextColumn Binding="{Binding Жанр_id}" Header="Тип документа" IsReadOnly="True" Width="2*" />
-                <DataGridTextColumn Binding="{Binding Языки_id}" Header="Срок действия" IsReadOnly="True" Width="2*" />
-                <DataGridTextColumn Binding="{Binding Издательство}" Header="Место хранения" IsReadOnly="True" Width="2*" />
-                <DataGridTextColumn Binding="{Binding Год_издания}" Header="Файл" IsReadOnly="True" Width="2*" />
-                <DataGridTextColumn Binding="{Binding Год_издания}" Header="Номер приказа" IsReadOnly="True" Width="2*" />
-                <DataGridTextColumn Binding="{Binding Год_издания}" Header="Дата приказа" IsReadOnly="True" Width="2*" />
-                <DataGridTextColumn Binding="{Binding Год_издания}" Header="Актуальность" IsReadOnly="True" Width="2*" />
+                <DataGridTextColumn Binding="{Binding Index}" Header="Индекс" IsReadOnly="True" Width="2*"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Название" IsReadOnly="True" Width="3*" />
+                <DataGridTextColumn Binding="{Binding Doc_tipe.Name}" Header="Тип документа" IsReadOnly="True" Width="2*" />
+                <DataGridTextColumn Binding="{Binding Validity_period}" Header="Срок действия" IsReadOnly="True" Width="2*" />
+                <DataGridTextColumn Binding="{Binding Save_place.Name}" Header="Место хранения" IsReadOnly="True" Width="2*" />
+                <DataGridTextColumn Binding="{Binding Doc_file}" Header="Файл" IsReadOnly="True" Width="2*" />
+                <DataGridTextColumn Binding="{Binding Number_order}" Header="Номер приказа" IsReadOnly="True" Width="2*" />
+                <DataGridTextColumn Binding="{Binding Date_order}" Header="Дата приказа" IsReadOnly="True" Width="2*" />
+                <DataGridTextColumn Binding="{Binding Relevance}" Header="Актуальность" IsReadOnly="True" Width="2*" />
             </DataGrid.Columns>
         </DataGrid>
         <Expander Header="Расширенный поиск"  Margin="628,14,529,0" VerticalAlignment="Top">
             <StackPanel>
-                <TextBox materialDesign:HintAssist.Hint="Индекс"/>
-                <ComboBox materialDesign:HintAssist.Hint="Тип документа"/>
-                <ComboBox materialDesign:HintAssist.Hint="Место хранения" />
+                <TextBox materialDesign:HintAssist.Hint="Индекс" Name="txtIndexSearch" LostFocus="txtIndexSearch_LostFocus"/>
+                <ComboBox materialDesign:HintAssist.Hint="Тип документа" Name="cmbTypeDocuments" LostFocus="cmbTypeDocuments_LostFocus"/>
+                <ComboBox materialDesign:HintAssist.Hint="Место хранения" Name="cmbPlaceStore" LostFocus="cmbPlaceStore_LostFocus"/>
                 <CheckBox Content="Актуальность"/>
 
             </StackPanel>
