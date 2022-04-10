@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokumentooborot", "Dokumentooborot\Dokumentooborot.csproj", "{97FCCC41-EEC6-4B88-A7BA-7D90478F2081}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{053EB7C7-B89B-4C45-9BE6-E41F76287452}"
+	ProjectSection(SolutionItems) = preProject
+		..\docs\ТЗ.txt = ..\docs\ТЗ.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
