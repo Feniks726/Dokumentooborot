@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Dokumentooborot"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Техдокументация" Height="400" Width="600">
+        Title="Техдокументация" Height="400" Width="600" Loaded="Window_Loaded">
     <Grid Background="#d7d7d7">
         <Border MinWidth="300" MinHeight="300" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" CornerRadius="15">
             <Border.Effect>
