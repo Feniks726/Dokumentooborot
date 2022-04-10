@@ -63,5 +63,15 @@ namespace Dokumentooborot
             else
                 MessageBox.Show("Error: Неверный Login или Password");
         }
+         private void Window_Loaded(object sender, RoutedEventArgs e)
+         {
+            foreach (Document item in db.Documents.ToList())
+            { 
+                if(item.Validity_period >= DateTime.Today)
+                {
+                    item.Relevance = false;
+                }
+            }
+        }
     }
 }
