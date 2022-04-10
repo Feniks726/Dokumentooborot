@@ -74,73 +74,73 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Department.cs">
+    <Compile Include="DAL\Department.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Document.cs">
+    <Compile Include="DAL\Document.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Doc_tipe.cs">
+    <Compile Include="DAL\Doc_tipe.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Context.cs">
+    <Compile Include="DAL\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model1.cs">
+    <Compile Include="DAL\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Designer.cs">
+    <Compile Include="DAL\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Role.cs">
+    <Compile Include="DAL\Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Save_place.cs">
+    <Compile Include="DAL\Save_place.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="DAL\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="User.cs">
+    <Compile Include="DAL\User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Who_know.cs">
+    <Compile Include="DAL\Who_know.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="Windows\wAdmin.xaml.cs">
+      <DependentUpon>wAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window10.xaml.cs">
+    <Compile Include="Windows\Trash\Window10.xaml.cs">
       <DependentUpon>Window10.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window2.xaml.cs">
-      <DependentUpon>Window2.xaml</DependentUpon>
+    <Compile Include="Windows\wUser.xaml.cs">
+      <DependentUpon>wUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window3.xaml.cs">
+    <Compile Include="Windows\Trash\Window3.xaml.cs">
       <DependentUpon>Window3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window4.xaml.cs">
+    <Compile Include="Windows\Trash\Window4.xaml.cs">
       <DependentUpon>Window4.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window5.xaml.cs">
+    <Compile Include="Windows\Trash\Window5.xaml.cs">
       <DependentUpon>Window5.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window6.xaml.cs">
+    <Compile Include="Windows\Trash\Window6.xaml.cs">
       <DependentUpon>Window6.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window7.xaml.cs">
+    <Compile Include="Windows\Trash\Window7.xaml.cs">
       <DependentUpon>Window7.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window8.xaml.cs">
+    <Compile Include="Windows\Trash\Window8.xaml.cs">
       <DependentUpon>Window8.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window9.xaml.cs">
+    <Compile Include="Windows\Trash\Window9.xaml.cs">
       <DependentUpon>Window9.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -155,43 +155,43 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window1.xaml">
+    <Page Include="Windows\wAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window10.xaml">
+    <Page Include="Windows\Trash\Window10.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window2.xaml">
+    <Page Include="Windows\wUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window3.xaml">
+    <Page Include="Windows\Trash\Window3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window4.xaml">
+    <Page Include="Windows\Trash\Window4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window5.xaml">
+    <Page Include="Windows\Trash\Window5.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window6.xaml">
+    <Page Include="Windows\Trash\Window6.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window7.xaml">
+    <Page Include="Windows\Trash\Window7.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window8.xaml">
+    <Page Include="Windows\Trash\Window8.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window9.xaml">
+    <Page Include="Windows\Trash\Window9.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -214,11 +214,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model1.edmx">
+    <EntityDeploy Include="DAL\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
+    <None Include="DAL\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -234,18 +234,19 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model1.Context.tt">
+    <Content Include="DAL\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model1.tt">
+    <Content Include="DAL\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Resource Include="Resources\open.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
