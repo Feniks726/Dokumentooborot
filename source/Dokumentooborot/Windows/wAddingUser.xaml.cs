@@ -9,11 +9,11 @@ namespace Dokumentooborot.Windows
     /// <summary>
     /// Логика взаимодействия для wAddingUser.xaml
     /// </summary>
-    public partial class wAddingUser : Window erwerwer
+    public partial class wAddingUser : Window
     {
         public wAddingUser()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
         BDEntities db; 
         private void Window_Loaded(object sender, RoutedEventArgs e)
