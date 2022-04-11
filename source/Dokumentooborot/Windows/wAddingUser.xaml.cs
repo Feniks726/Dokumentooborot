@@ -9,7 +9,7 @@ namespace Dokumentooborot.Windows
     /// <summary>
     /// Логика взаимодействия для wAddingUser.xaml
     /// </summary>
-    public partial class wAddingUser : Window
+    public partial class wAddingUser : Window erwerwer
     {
         public wAddingUser()
         {
