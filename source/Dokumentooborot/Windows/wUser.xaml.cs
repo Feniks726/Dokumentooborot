@@ -14,11 +14,12 @@ namespace Dokumentooborot.Windows
     {
         BDEntities db;
 
-        public wUser(BDEntities db)
+        public wUser()
         {
-            this.db = db;
             InitializeComponent();
-        }
+             
+            db = new BDEntities();
+       }
 
         private void btnReports_Click(object sender, RoutedEventArgs e)
         {

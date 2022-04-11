@@ -3,7 +3,6 @@ using System.Linq;
 using System.Windows;
 using Dokumentooborot.DAL;
 using Dokumentooborot.Windows;
-using Dokumentooborot.Windows.Trash;
 
 namespace Dokumentooborot
 {
@@ -56,7 +55,7 @@ namespace Dokumentooborot
                 //ActiveUser.Фамилия = fuser.Фамилия;
                 //ActiveUser.Отчество = fuser.Отчество;
 
-                wUser taskWindow = new wUser(db);
+                wUser taskWindow = new wUser();
                 taskWindow.Show();
                 this.Close();
             }
