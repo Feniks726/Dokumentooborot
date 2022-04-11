@@ -15,7 +15,7 @@ namespace Dokumentooborot.Windows
         {
             InitializeComponent();
         }
-        BDEntities db;
+        BDEntities db; 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             db = new BDEntities();
