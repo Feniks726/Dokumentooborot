@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Техдокументация" Height="693.75" Width="1577.5" Loaded="Window_Loaded">
     <Grid  Background="#d7d7d7">
-        <TextBox x:Name="Find" materialDesign:HintAssist.Hint="Поиск по названию документа" Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Left"  Margin="214,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395"/>
+        <TextBox x:Name="Find" materialDesign:HintAssist.Hint="Поиск по названию документа" Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Left"  Margin="214,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="395" LostFocus="Find_LostFocus"/>
 
         <Border Width="173" HorizontalAlignment="Left" Margin="9,10,0,10" Background="White" Padding="5" >
             <Grid>
@@ -50,13 +50,13 @@
         </DataGrid>
         <Expander Header="Расширенный поиск"  Margin="628,14,529,0" VerticalAlignment="Top">
             <StackPanel>
-                <TextBox materialDesign:HintAssist.Hint="Индекс"/>
-                <TextBox materialDesign:HintAssist.Hint="Номер приказа"/>
-                <ComboBox materialDesign:HintAssist.Hint="Тип документа"/>
-                <ComboBox materialDesign:HintAssist.Hint="Место хранения" />
-                <DatePicker materialDesign:HintAssist.Hint="Срок действия до" />
-                <DatePicker materialDesign:HintAssist.Hint="Дата приказа" />
-                <CheckBox Content="Актуальность"/>
+                <TextBox materialDesign:HintAssist.Hint="Индекс" Name="txtIndexSearch" LostFocus="txtIndexSearch_LostFocus" />
+                <TextBox materialDesign:HintAssist.Hint="Номер приказа" Name="txtNumberOrder" LostFocus="txtNumberOrder_LostFocus"/>
+                <ComboBox materialDesign:HintAssist.Hint="Тип документа" Name="cmbTypeDocuments" LostFocus="cmbTypeDocuments_LostFocus" DisplayMemberPath="Name"/>
+                <ComboBox materialDesign:HintAssist.Hint="Место хранения"  Name="cmbPlaceStore" LostFocus="cmbPlaceStore_LostFocus"  DisplayMemberPath="Name"/>
+                <DatePicker materialDesign:HintAssist.Hint="Срок действия до"  Name="dateActionTo" LostFocus="dateActionTo_LostFocus"/>
+                <DatePicker materialDesign:HintAssist.Hint="Дата приказа"  Name="dateOrder" LostFocus="dateOrder_LostFocus"/>
+                <CheckBox Content="Актуальность" Name="chbRelevant" IsThreeState="True" LostFocus="chbRelevant_LostFocus"/>
             </StackPanel>
         </Expander>
     </Grid>
