@@ -11,7 +11,7 @@
 
     </Window.Resources>
     <Grid>
-        <DataGrid x:Name="dgogrenci" IsReadOnly="True" CanUserDeleteRows="False" CanUserAddRows="False" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="365" Margin="36,28,0,0" VerticalAlignment="Top" Width="959"  PreviewKeyDown="dgogrenci_PreviewKeyDown">
+        <DataGrid x:Name="dgogrenci" IsReadOnly="True" CanUserDeleteRows="False" CanUserAddRows="False" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="365" Margin="36,28,0,0" VerticalAlignment="Top" Width="959"  PreviewKeyDown="dgogrenci_PreviewKeyDown" MouseDoubleClick="dgogrenci_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Login}" Header="Логин" Width="3*" />
                 <DataGridTextColumn Binding="{Binding Password}" Header="Пароль" Width="3*" />
@@ -36,7 +36,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Добавть пользователя" HorizontalAlignment="Center" VerticalAlignment="Top" Width="224" Click="Button_Click" Height="35" Margin="392,422,409,0"/>
+        <Button Content="Добавть пользователя" HorizontalAlignment="Center" VerticalAlignment="Top" Width="224" Click="AddUserClick" Height="35" Margin="392,422,409,0"/>
     </Grid>
 </Window>
 

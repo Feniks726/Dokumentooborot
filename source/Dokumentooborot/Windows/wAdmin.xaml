@@ -22,7 +22,7 @@
             </Grid>
         </Border>
 
-        <DataGrid Name="dgogrenci" CanUserAddRows="False" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="556" Margin="214,81,0,0" VerticalAlignment="Top" Width="1346" MouseDoubleClick="dgogrenci_MouseDoubleClick">
+        <DataGrid Name="dgogrenci" CanUserAddRows="False" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="556" Margin="214,81,0,0" VerticalAlignment="Top" Width="1346" MouseDoubleClick="dgogrenci_MouseDoubleClick" PreviewKeyDown="dgogrenci_PreviewKeyDown">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Index}" Header="Индекс" IsReadOnly="True" Width="2*"/>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Название" IsReadOnly="True" Width="3*" />

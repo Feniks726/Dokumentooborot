@@ -57,14 +57,18 @@ namespace Dokumentooborot.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e) //закончено
         {
-            db = new BDEntities();            
-            foreach (Who_know item in db.Who_know.ToList())
+            db = new BDEntities();
+            if (D.dataD1 != null)
             {
-                if(item.Document_id == Convert.ToInt32(D.dataD1))
-                {                    
-                    whoKnowLists.Add(new WhoKnowList(item.Departmen_id));
-                }                
+                foreach (Who_know item in db.Who_know.ToList())
+                {
+                    if (item.Document_id == Convert.ToInt32(D.dataD1))
+                    {
+                        whoKnowLists.Add(new WhoKnowList(item.Departmen_id));
+                    }
+                }
             }
+
             if (whoKnowLists.Count != 0)
             {                
                 foreach (Department item in db.Departments.ToList())

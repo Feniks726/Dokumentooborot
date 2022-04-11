@@ -40,7 +40,7 @@ namespace Dokumentooborot.Windows
             RolesExtra.AddRange(db.Roles.ToList());                        
         }
         
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddUserClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
             new wAddingUser().ShowDialog();
@@ -57,6 +57,19 @@ namespace Dokumentooborot.Windows
                     dgogrenci.ItemsSource = db.Users.ToList();
                 }
             }                
+        }
+
+        private void dgogrenci_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (dgogrenci.SelectedItem != null)
+            {
+                User u = dgogrenci.SelectedItem as User;
+                D.dataD1 = u.Id.ToString();
+                new wChangeUser().ShowDialog();
+
+                db = new BDEntities();
+                dgogrenci.ItemsSource = db.Users.ToList();
+            }
         }
     }
 }

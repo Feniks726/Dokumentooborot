@@ -9,7 +9,7 @@
         Title="Редактирование документа" Height="469.874" Width="560.446" Loaded="Window_Loaded">
     <Grid>
         <TextBox x:Name="IndexTxt" HorizontalAlignment="Left" Height="23" Margin="142,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <CheckBox x:Name="RelevanceCheck" Content="Актуален" HorizontalAlignment="Left" Margin="281,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.45,-0.693"/>
+        <CheckBox x:Name="RelevanceCheck"  IsEnabled="False" Content="Актуален" HorizontalAlignment="Left" Margin="281,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.45,-0.693"/>
         <TextBox x:Name="NumberOrderTxt" HorizontalAlignment="Left" Height="23" Margin="116,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
         <DatePicker Name="DateOrderPicker" materialDesign:HintAssist.Hint="Дата приказа" HorizontalAlignment="Left" Margin="262,67,0,0" VerticalAlignment="Top" Width="120"  />
         <DatePicker Name="ValidityPeriodPicker" materialDesign:HintAssist.Hint="Срок действия" HorizontalAlignment="Left" Margin="406,67,0,0" VerticalAlignment="Top" Width="120"/>

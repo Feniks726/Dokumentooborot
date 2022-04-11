@@ -176,5 +176,26 @@ namespace Dokumentooborot.Windows
 
             dgogrenci.ItemsSource = documents.ToList();
         }
+
+        private void dgogrenci_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Delete)
+            {
+                if (MessageBox.Show("Удалить запись?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    Document d = dgogrenci.SelectedItem as Document;
+                    foreach (Who_know item in db.Who_know.ToList())
+                    {
+                        if (item.Document_id == d.Id)
+                        {
+                            db.Who_know.Remove(item);
+                        }
+                    }
+                    db.Documents.Remove((Document)dgogrenci.SelectedItem);
+                    db.SaveChanges();
+                    dgogrenci.ItemsSource = db.Documents.ToList();
+                }
+            }
+        }
     }
 }

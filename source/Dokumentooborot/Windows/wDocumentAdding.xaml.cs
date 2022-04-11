@@ -33,13 +33,24 @@ namespace Dokumentooborot.Windows
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            D.dataD1 = GetMaxId().ToString();            
-            new wWhoKnow().ShowDialog();            
+            D.dataD2.Clear();
+            new wWhoKnow().ShowDialog();
+            string str = "";
+            for (int i = 0; i < D.dataD2.Count(); i++)
+            {
+                int j = D.dataD2[i];
+                var d = db.Departments.Where(w => w.Id == j).FirstOrDefault();
+                str = string.Concat(str, d.Name + ", ");
+            }
+            if (str.Length > 3)
+                str = str.Remove(str.Length - 2);
+            WhoKnowTxt.Text = str;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             var dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.Filter = @"All Files|*.txt;*.docx;*.doc;*.pdf*.xls;*.xlsx;*.pptx;*.ppt|Image Files|*.jpg;*.jpeg;*.png|Text Files (.txt)|*.txt|Word File (.docx ,.doc)|*.docx;*.doc|PDF (.pdf)|*.pdf|Spreadsheet (.xls ,.xlsx)| *.xls ;*.xlsx|Presentation (.pptx ,.ppt)|*.pptx;*.ppt";
             dialog.InitialDirectory = @"c:\"; //узнать необходимую директорию
             bool? result = dialog.ShowDialog();
             if (result == true)
@@ -62,29 +73,60 @@ namespace Dokumentooborot.Windows
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Document doc = new Document();
-            doc.Index = IndexTxt.Text;
-            doc.Name = NameDocTxt.Text;
-            doc.Number_order = NumberOrderTxt.Text;
-            doc.Doc_tipe_id = (TipeDocCombo.SelectedItem as Doc_tipe).Id;
-            doc.Save_place_id = (SavePlaceCombo.SelectedItem as Save_place).Id;
-            doc.Developer_id = (DeveloperCombo.SelectedItem as Department).Id;
-            doc.Validity_period = ValidityPeriodPicker.DisplayDate;
-            doc.Date_order = DateOrderPicker.DisplayDate;
-            doc.Relevance = RelevanceCheck.IsChecked.Value;
-            doc.Doc_file = filename;
-            
-            db.Documents.Add(doc);
+            try
+            {
+                Document doc = new Document();
+                var checkindex = db.Documents.FirstOrDefault(w => w.Index == IndexTxt.Text);
+                if (IndexTxt.Text != null && checkindex == null)
+                {
+                    doc.Index = IndexTxt.Text;
+                    if (NameDocTxt != null)
+                    {
+                        doc.Name = NameDocTxt.Text;
+                        if (NumberOrderTxt != null)
+                        {
+                            doc.Number_order = NumberOrderTxt.Text;
+                            if (DateOrderPicker.Text != null && ValidityPeriodPicker != null)
+                            {
+                                if (DateOrderPicker.SelectedDate < ValidityPeriodPicker.SelectedDate)
+                                {
+                                    doc.Date_order = DateOrderPicker.SelectedDate.Value;
+                                    doc.Validity_period = ValidityPeriodPicker.SelectedDate.Value;
+                                    if (DeveloperCombo != null && SavePlaceCombo != null && TipeDocCombo != null)
+                                    {
+                                        doc.Save_place_id = (SavePlaceCombo.SelectedItem as Save_place).Id;
+                                        doc.Doc_tipe_id = (TipeDocCombo.SelectedItem as Doc_tipe).Id;
+                                        doc.Developer_id = (DeveloperCombo.SelectedItem as Department).Id;
+                                        doc.Relevance = true;
+                                        doc.Doc_file = FileTxt.Text;
 
-            //добавление Who_know
+                                        db.Documents.Add(doc);
+                                        db.SaveChanges();
 
-            MessageBox.Show(GetMaxId().ToString());
-            db.SaveChanges();
+                                        //whoknow                                
+
+                                        Who_know who = new Who_know();
+                                        for (int i = 0; i < D.dataD2.Count(); i++)
+                                        {
+                                            int DepItem = D.dataD2[i];
+                                            who.Departmen_id = DepItem;
+                                            who.Document_id = GetMaxId();
+                                            db.Who_know.Add(who);
+                                            db.SaveChanges();
+                                        }
+                                        this.Close();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error: некоректные данные");
+            }
         }
-        
-
-
-
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {            

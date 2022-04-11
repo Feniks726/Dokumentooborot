@@ -18,19 +18,30 @@ namespace Dokumentooborot.Windows
         }
         
         private void Button_Click_1(object sender, RoutedEventArgs e)
-        {                        
-            this.Hide();
+        {
+            D.dataD2.Clear();
             new wWhoKnow().ShowDialog();
-            this.Show();
+
+            string str = "";
+            for (int i = 0; i < D.dataD2.Count(); i++)
+            {
+                int j = D.dataD2[i];
+                var d = db.Departments.Where(w => w.Id == j).FirstOrDefault();
+                str = string.Concat(str, d.Name + ", ");
+            }
+            if (str.Length > 3)
+                str = str.Remove(str.Length - 2);
+            WhoKnowTxt.Text = str;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             var dialog = new Microsoft.Win32.OpenFileDialog();
-            dialog.InitialDirectory = @"c:\"; //узнать необходимую директорию
+            dialog.Filter = @"All Files|*.txt;*.docx;*.doc;*.pdf*.xls;*.xlsx;*.pptx;*.ppt|Image Files|*.jpg;*.jpeg;*.png|Text Files (.txt)|*.txt|Word File (.docx ,.doc)|*.docx;*.doc|PDF (.pdf)|*.pdf|Spreadsheet (.xls ,.xlsx)| *.xls ;*.xlsx|Presentation (.pptx ,.ppt)|*.pptx;*.ppt";
+            dialog.InitialDirectory = @"c:\";
             bool? result = dialog.ShowDialog();
             if (result == true)
-            {          
+            {
                 filename = dialog.FileName;
                 FileTxt.Text = filename;
             }
@@ -38,41 +49,65 @@ namespace Dokumentooborot.Windows
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            int dataDId = Convert.ToInt32(D.dataD1);
-            var uRow = db.Documents.Where(w => w.Id == dataDId).FirstOrDefault();
-
-            if (IndexTxt.Text != null)
+            try
             {
-                uRow.Index = IndexTxt.Text;
+                int dataDId = Convert.ToInt32(D.dataD1);
+                var uRow = db.Documents.Where(w => w.Id == dataDId).FirstOrDefault();
 
-                if (NameDocTxt != null)
+                if (IndexTxt.Text != null || IndexTxt.Text == uRow.Index)
                 {
-                    uRow.Name = NameDocTxt.Text;
-                    if (NumberOrderTxt != null)
+
+                    uRow.Index = IndexTxt.Text;
+                    if (NameDocTxt != null)
                     {
-                        uRow.Number_order = NumberOrderTxt.Text;                        
-                        if (DateOrderPicker.Text != null && ValidityPeriodPicker != null)
+                        uRow.Name = NameDocTxt.Text;
+                        if (NumberOrderTxt != null)
                         {
-                            if(DateOrderPicker.DisplayDate < ValidityPeriodPicker.DisplayDate)
+                            uRow.Number_order = NumberOrderTxt.Text;
+                            if (DateOrderPicker.Text != null && ValidityPeriodPicker != null)
                             {
-                                uRow.Date_order = DateOrderPicker.DisplayDate;
-                                uRow.Validity_period = ValidityPeriodPicker.DisplayDate;
 
-                                uRow.Doc_file = FileTxt.Text;
+                                if (DateOrderPicker.SelectedDate < ValidityPeriodPicker.SelectedDate)
+                                {
+                                    uRow.Relevance = true;
+                                    uRow.Date_order = DateOrderPicker.SelectedDate.Value;
+                                    uRow.Validity_period = ValidityPeriodPicker.SelectedDate.Value;
+                                    uRow.Doc_file = FileTxt.Text;
+                                    uRow.Save_place_id = (SavePlaceCombo.SelectedItem as Save_place).Id;
+                                    uRow.Doc_tipe_id = (TipeDocCombo.SelectedItem as Doc_tipe).Id;
+                                    uRow.Developer_id = (DeveloperCombo.SelectedItem as Department).Id;
+                                    db.SaveChanges();
 
-                                uRow.Save_place_id = (SavePlaceCombo.SelectedItem as Save_place).Id;
-                                uRow.Doc_tipe_id = (TipeDocCombo.SelectedItem as Doc_tipe).Id;
-                                uRow.Developer_id = (DeveloperCombo.SelectedItem as Department).Id;
-                                //whoknow
-                                db.SaveChanges();
-                                                                
-                            }                            
+                                    //whoknow                                
+
+                                    foreach (Who_know item in db.Who_know.ToList())
+                                    {
+                                        if (item.Document_id == Convert.ToInt32(D.dataD1))
+                                        {
+                                            db.Who_know.Remove(item);
+                                        }
+                                    }
+
+                                    Who_know who = new Who_know();
+                                    for (int i = 0; i < D.dataD2.Count(); i++)
+                                    {
+                                        int DepItem = D.dataD2[i];
+                                        who.Departmen_id = DepItem;
+                                        who.Document_id = Convert.ToInt32(D.dataD1);
+                                        db.Who_know.Add(who);
+                                        db.SaveChanges();
+                                    }
+                                    this.Close();
+                                }
+                            }
                         }
                     }
                 }
             }
-
-
+            catch
+            {
+                MessageBox.Show("Error: некоректные данные");
+            }
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -90,33 +125,32 @@ namespace Dokumentooborot.Windows
             IndexTxt.Text = docData.Index;
             NumberOrderTxt.Text = docData.Number_order;
             NameDocTxt.Text = docData.Name;
-            FileTxt.Text = docData.Doc_file;            
+            FileTxt.Text = docData.Doc_file;
             RelevanceCheck.IsChecked = docData.Relevance;
 
             string who = "";
             foreach (Who_know item in db.Who_know.ToList())
             {
                 if (D.dataD1 == item.Document_id.ToString())
-                {                                        
-                    
+                {
                     who = string.Concat(who, item.Department.Name + ", ");
-                }                
+                }
             }
-            if (who.Length > 5)
+            if (who.Length > 3)
                 who = who.Remove(who.Length - 2);
 
             WhoKnowTxt.Text = who;
 
             DateOrderPicker.Text = docData.Date_order.ToString();
             ValidityPeriodPicker.Text = docData.Validity_period.ToString();
-            
+
             SavePlaceCombo.ItemsSource = db.Save_place.ToList();
             SavePlaceCombo.SelectedIndex = docData.Save_place_id - 1;
 
             TipeDocCombo.ItemsSource = db.Doc_tipe.ToList();
             TipeDocCombo.SelectedIndex = docData.Doc_tipe_id - 1;
 
-           
+
             DeveloperCombo.ItemsSource = db.Departments.ToList();
             DeveloperCombo.SelectedIndex = docData.Developer_id - 1;
         }

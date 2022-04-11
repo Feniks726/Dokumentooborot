@@ -128,6 +128,9 @@
     <Compile Include="Windows\wDocumentAdding.xaml.cs">
       <DependentUpon>wDocumentAdding.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\wChangeUser.xaml.cs">
+      <DependentUpon>wChangeUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\wMakeReports.xaml.cs">
       <DependentUpon>wMakeReports.xaml</DependentUpon>
     </Compile>
@@ -172,6 +175,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\wDocumentAdding.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wChangeUser.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
