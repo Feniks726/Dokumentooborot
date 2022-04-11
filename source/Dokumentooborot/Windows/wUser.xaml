@@ -12,7 +12,7 @@
 
         <Border Width="173" HorizontalAlignment="Left" Margin="9,10,0,10" Background="White" Padding="5" >
             <Grid>
-                <TextBlock Text="Пользователь" HorizontalAlignment="Center" Margin="40,10,37,594"></TextBlock>
+                <TextBlock Text="Пользователь" HorizontalAlignment="Center" Margin="40,10,37,594"/>
                 <Button Content="Отчеты" Margin="0,72,0,516" Height="Auto" Name="btnReports" Click="btnReports_Click" />
                 <Button Content="Выйти" Margin="0,527,0,61" Height="Auto" Name="btnExit" Click="btnExit_Click" />
 
@@ -35,10 +35,9 @@
         <Expander Header="Расширенный поиск"  Margin="628,14,529,0" VerticalAlignment="Top">
             <StackPanel>
                 <TextBox materialDesign:HintAssist.Hint="Индекс" Name="txtIndexSearch" LostFocus="txtIndexSearch_LostFocus"/>
-                <ComboBox materialDesign:HintAssist.Hint="Тип документа" Name="cmbTypeDocuments" LostFocus="cmbTypeDocuments_LostFocus"/>
-                <ComboBox materialDesign:HintAssist.Hint="Место хранения" Name="cmbPlaceStore" LostFocus="cmbPlaceStore_LostFocus"/>
-                <CheckBox Content="Актуальность"/>
-
+                <ComboBox materialDesign:HintAssist.Hint="Тип документа" Name="cmbTypeDocuments" LostFocus="cmbTypeDocuments_LostFocus" DisplayMemberPath="Name"/>
+                <ComboBox materialDesign:HintAssist.Hint="Место хранения" Name="cmbPlaceStore" LostFocus="cmbPlaceStore_LostFocus" DisplayMemberPath="Name"/>
+                <CheckBox Content="Актуальность" Name="chbRelevant" IsThreeState="True" Checked="chbRelevant_Checked"/>
             </StackPanel>
         </Expander>
     </Grid>
