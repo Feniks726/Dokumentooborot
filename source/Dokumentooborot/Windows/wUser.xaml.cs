@@ -109,6 +109,7 @@ namespace Dokumentooborot.Windows
             {
                 documents = documents.Where(t => t.Relevance == chbRelevant.IsChecked.Value).ToList();
             }
+
             dgogrenci.ItemsSource = documents.ToList();
         }
     }
