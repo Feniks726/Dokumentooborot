@@ -4,14 +4,14 @@ using System.Windows;
 using System.Windows.Input;
 using Dokumentooborot.DAL;
 
-namespace Dokumentooborot.Windows.Trash
+namespace Dokumentooborot.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для Window10.xaml
+    /// Логика взаимодействия для wAddingUser.xaml
     /// </summary>
-    public partial class Window10 : Window
+    public partial class wAddingUser : Window
     {
-        public Window10()
+        public wAddingUser()
         {
             InitializeComponent();
         }
@@ -52,7 +52,7 @@ namespace Dokumentooborot.Windows.Trash
                                             db.Users.Add(user);
                                             db.SaveChanges();
 
-                                            new Window3().Show();
+                                            new wUsersManage().Show();
                                             this.Close();
                                         }
                                     }

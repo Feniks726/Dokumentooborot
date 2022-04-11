@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Windows;
 using Dokumentooborot.DAL;
-using Dokumentooborot.Windows.Trash;
 
 namespace Dokumentooborot.Windows
 {
@@ -23,7 +22,7 @@ namespace Dokumentooborot.Windows
         private void btnReports_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            new Window6().ShowDialog();
+            new wReports().ShowDialog();
             this.Show();
         }
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows;
 using Dokumentooborot.DAL;
 
-namespace Dokumentooborot.Windows.Trash
+namespace Dokumentooborot.Windows
 {
     /// <summary>
     /// Логика взаимодействия для Window9.xaml
@@ -21,10 +21,10 @@ namespace Dokumentooborot.Windows.Trash
             RoleName = Name;
         }
     }
-    public partial class Window9 : Window
+    public partial class wDocumentAdding : Window
     {
         SqlConnection sqlConnection = new SqlConnection(@"Data Source = DESKTOP-HSHULSK\SQL;Initial Catalog=BD;Integrated Security=True"); //менять при установке
-        public Window9()
+        public wDocumentAdding()
         {
             InitializeComponent();            
         }
@@ -34,7 +34,7 @@ namespace Dokumentooborot.Windows.Trash
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             D.dataD1 = GetMaxId().ToString();            
-            new Window5().ShowDialog();            
+            new wWhoKnow().ShowDialog();            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

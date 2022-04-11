@@ -113,35 +113,35 @@
     <Compile Include="DAL\Who_know.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\wAddingUser.xaml.cs">
+      <DependentUpon>wAddingUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\wAdmin.xaml.cs">
       <DependentUpon>wAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Trash\Window10.xaml.cs">
-      <DependentUpon>Window10.xaml</DependentUpon>
+    <Compile Include="Windows\wDocumentEdit.xaml.cs">
+      <DependentUpon>wDocumentEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wBackUp.xaml.cs">
+      <DependentUpon>wBackUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wDocumentAdding.xaml.cs">
+      <DependentUpon>wDocumentAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wMakeReports.xaml.cs">
+      <DependentUpon>wMakeReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wReports.xaml.cs">
+      <DependentUpon>wReports.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\wUser.xaml.cs">
       <DependentUpon>wUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Trash\Window3.xaml.cs">
-      <DependentUpon>Window3.xaml</DependentUpon>
+    <Compile Include="Windows\wUsersManage.xaml.cs">
+      <DependentUpon>wUsersManage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Trash\Window4.xaml.cs">
-      <DependentUpon>Window4.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Trash\Window5.xaml.cs">
-      <DependentUpon>Window5.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Trash\Window6.xaml.cs">
-      <DependentUpon>Window6.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Trash\Window7.xaml.cs">
-      <DependentUpon>Window7.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Trash\Window8.xaml.cs">
-      <DependentUpon>Window8.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Trash\Window9.xaml.cs">
-      <DependentUpon>Window9.xaml</DependentUpon>
+    <Compile Include="Windows\wWhoKnow.xaml.cs">
+      <DependentUpon>wWhoKnow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -155,45 +155,45 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\wAddingUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Windows\wAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Trash\Window10.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Windows\wDocumentEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wBackUp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wDocumentAdding.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wMakeReports.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wReports.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\wUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Trash\Window3.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Windows\wUsersManage.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="Windows\Trash\Window4.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Windows\wWhoKnow.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Trash\Window5.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Trash\Window6.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Trash\Window7.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Trash\Window8.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\Trash\Window9.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Dokumentooborot.DAL;
-using Dokumentooborot.Windows.Trash;
 
 namespace Dokumentooborot.Windows
 {
@@ -20,12 +19,12 @@ namespace Dokumentooborot.Windows
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {            
-            new Window9().ShowDialog();            
+            new wDocumentAdding().ShowDialog();            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            new Window3().ShowDialog();                        
+            new wUsersManage().ShowDialog();                        
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -36,12 +35,12 @@ namespace Dokumentooborot.Windows
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            new Window6().ShowDialog();
+            new wReports().ShowDialog();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            new Window8().ShowDialog();
+            new wBackUp().ShowDialog();
         }
 
         private void dgogrenci_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -53,7 +52,7 @@ namespace Dokumentooborot.Windows
                 Document doc = new Document();
                 doc.Id = selctedRow.Id;
                 D.dataD1 = doc.Id.ToString(); //передаю Id документа            
-                new Window4().ShowDialog();
+                new wDocumentEdit().ShowDialog();
                 this.Show();
             }
             

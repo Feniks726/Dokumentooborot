@@ -3,16 +3,16 @@ using System.Linq;
 using System.Windows;
 using Dokumentooborot.DAL;
 
-namespace Dokumentooborot.Windows.Trash
+namespace Dokumentooborot.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для Window4.xaml
+    /// Логика взаимодействия для wDocumentEdit.xaml
     /// </summary>
-    public partial class Window4 : Window
+    public partial class wDocumentEdit : Window
     {
         string filename;
         BDEntities db;
-        public Window4()
+        public wDocumentEdit()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace Dokumentooborot.Windows.Trash
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {                        
             this.Hide();
-            new Window5().ShowDialog();
+            new wWhoKnow().ShowDialog();
             this.Show();
         }
 

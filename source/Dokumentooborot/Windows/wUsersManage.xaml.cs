@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 using Dokumentooborot.DAL;
 
-namespace Dokumentooborot.Windows.Trash
+namespace Dokumentooborot.Windows
 {
     /// <summary>
     /// Логика взаимодействия для Window3.xaml
@@ -22,11 +22,11 @@ namespace Dokumentooborot.Windows.Trash
         }
     }
 
-    public partial class Window3 : Window  //нужно сделать комбобокс на роль в датагриде
+    public partial class wUsersManage : Window  //нужно сделать комбобокс на роль в датагриде
     {
         BDEntities db;
 
-        public Window3()
+        public wUsersManage()
         {
             InitializeComponent();
             RolesExtra = new List<Role>();
@@ -43,7 +43,7 @@ namespace Dokumentooborot.Windows.Trash
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            new Window10().ShowDialog();
+            new wAddingUser().ShowDialog();
         }
 
         private void dgogrenci_PreviewKeyDown(object sender, KeyEventArgs e)

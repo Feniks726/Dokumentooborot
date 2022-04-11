@@ -1,13 +1,13 @@
 ﻿using System.Windows;
 
-namespace Dokumentooborot.Windows.Trash
+namespace Dokumentooborot.Windows
 {
     /// <summary>
     /// Логика взаимодействия для Window7.xaml
     /// </summary>
-    public partial class Window7 : Window
+    public partial class wMakeReports : Window
     {
-        public Window7()
+        public wMakeReports()
         {
             InitializeComponent();
         }

@@ -1,13 +1,13 @@
 ﻿using System.Windows;
 
-namespace Dokumentooborot.Windows.Trash
+namespace Dokumentooborot.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для Window6.xaml
+    /// Логика взаимодействия для wReports.xaml
     /// </summary>
-    public partial class Window6 : Window
+    public partial class wReports : Window
     {
-        public Window6()
+        public wReports()
         {
             InitializeComponent();
         }
@@ -15,7 +15,7 @@ namespace Dokumentooborot.Windows.Trash
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            new Window7().ShowDialog();
+            new wMakeReports().ShowDialog();
             this.Show();
         }
     }

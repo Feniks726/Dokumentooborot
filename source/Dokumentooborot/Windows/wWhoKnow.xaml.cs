@@ -4,10 +4,10 @@ using System.Linq;
 using System.Windows;
 using Dokumentooborot.DAL;
 
-namespace Dokumentooborot.Windows.Trash
+namespace Dokumentooborot.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для Window5.xaml
+    /// Логика взаимодействия для wWhoKnow.xaml
     /// </summary>
     public class WhoKnowList
     {
@@ -43,10 +43,10 @@ namespace Dokumentooborot.Windows.Trash
             Namee = Name;
         }
     }
-    public partial class Window5 : Window //будет проблема с временным хранением данных таблицы "who_know"
+    public partial class wWhoKnow : Window //будет проблема с временным хранением данных таблицы "who_know"
     {
         BDEntities db;
-        public Window5()
+        public wWhoKnow()
         {
             InitializeComponent();
         }

@@ -1,13 +1,13 @@
 ﻿using System.Windows;
 
-namespace Dokumentooborot.Windows.Trash
+namespace Dokumentooborot.Windows
 {
     /// <summary>
     /// Логика взаимодействия для Window8.xaml
     /// </summary>
-    public partial class Window8 : Window
+    public partial class wBackUp : Window
     {
-        public Window8()
+        public wBackUp()
         {
             InitializeComponent();
         }
