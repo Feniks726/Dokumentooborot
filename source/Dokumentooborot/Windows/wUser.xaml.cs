@@ -7,7 +7,7 @@ using Dokumentooborot.Windows.Trash;
 namespace Dokumentooborot.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для Window2.xaml
+    /// Логика взаимодействия для wUser.xaml
     /// </summary>
     public partial class wUser : Window
     {
