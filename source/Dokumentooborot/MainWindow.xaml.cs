@@ -17,11 +17,11 @@ namespace Dokumentooborot
     static class D
     {
         public static string dataD1;
-        public static List<int> dataD2 = new List<int>();        
+        public static List<int> dataD2 = new List<int>();
     }
     public partial class MainWindow : Window
     {
-        BDEntities db;
+        public static BDEntities db;
         public MainWindow()
         {
             InitializeComponent();

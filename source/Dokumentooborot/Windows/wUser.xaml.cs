@@ -10,7 +10,7 @@ namespace Dokumentooborot.Windows
     /// </summary>
     public partial class wUser : Window
     {
-        BDEntities db;
+        public BDEntities db;
 
         public wUser()
         {

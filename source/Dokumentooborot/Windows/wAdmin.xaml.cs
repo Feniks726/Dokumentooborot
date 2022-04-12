@@ -12,7 +12,7 @@ namespace Dokumentooborot.Windows
     /// </summary>
     public partial class wAdmin : Window
     {
-        BDEntities db;
+        public static BDEntities db;
         public wAdmin()
         {
             db = new BDEntities();
